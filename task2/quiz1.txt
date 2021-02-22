@@ -4,9 +4,30 @@ UserName : Aizik
 
 DIFFERENCE BETWEEN COOKIES AND SESSION VARIABLES IN PHP
 Session
-A session creates a file in a temporary directory on the server where registered session variables and their values are stored. This data will be available to all pages on the site during that visit.
+1 A session creates a file in a temporary directory on the server where registered session variables and their values are stored. This data will be available to all pages on the site during that visit.
 A session ends when the user closes the browser or after leaving the site, the server will terminate the session after a predetermined period of time, commonly 30 minutes duration.
 
+2 Session ends when user close his browser.
+
+3 PHP function session_destroy() is used to destroy all data stored to a session, and if you want to unset a particular session variable then you can use PHP unset() function. Example: unset($_SESSION["name"])
+
+4 You can store as much data as you like within in sessions.The only limits you can reach is the maximum memory a script can consume at one time, which by default is 128MB.
+
+5 Before using $_SESSION, you have to call session_start();
+This function will start the session and then, you can access $_SESSION data on that page.
+
+6 In PHP, $_SESSION superglobal variable is used to set or delete the session data.
+
 Cookies
-Cookies are text files stored on the client computer and they are kept of use tracking purpose. Server script sends a set of cookies to the browser. For example name, age, or identification number etc. The browser stores this information on a local machine for future use.
+1 Cookies are text files stored on the client computer and they are kept of use tracking purpose. Server script sends a set of cookies to the browser. For example name, age, or identification number etc. The browser stores this information on a local machine for future use.
 When next time browser sends any request to web server then it sends those cookies information to the server and server uses that information to identify the user.
+
+2 Cookie ends depends on the lifetime you set for it.
+
+3 You can delete a cookie by providing any past date in expiration time parameter, It will automatically delete the cookie. There is no separate function to unset cookie.
+
+4 Most browser’s maximum Cookie size is 4KB (4096 Bytes).
+
+5 You don’t need any function to start Cookie as It is stored in your local machine.
+
+6 In PHP, $_COOKIE superglobal variable is used to get cookie data.
